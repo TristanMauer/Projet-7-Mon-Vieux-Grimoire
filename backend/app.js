@@ -11,9 +11,10 @@ require('dotenv').config();
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
 const dbName = process.env.DB_NAME;
+const dbCluster = process.env.DB_CLUSTER
 
 // chaîne de connexion mongoDB
-const connectionString = `mongodb+srv://${dbUser}:${dbPass}@cluster0.in7rxfz.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const connectionString = `mongodb+srv://${dbUser}:${dbPass}@${dbCluster}.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {

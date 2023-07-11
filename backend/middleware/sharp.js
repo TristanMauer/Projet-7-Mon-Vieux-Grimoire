@@ -32,5 +32,4 @@ const compressImage = async (req, res, next) => {
         };
 };
 
-// exportation du middleware 
 module.exports = compressImage;
